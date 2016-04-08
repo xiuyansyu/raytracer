@@ -240,7 +240,7 @@ void Raytracer::render( int width, int height, Point3D eye, Vector3D view,
 
 
 	// anti aliasing parameters: can change anti_alias_dim for more/less anti aliasing
-	double anti_alias_dim = 4;
+	double anti_alias_dim = 5;
 	double anti_alias_offset = (anti_alias_dim-1)/(2*anti_alias_dim);
 	double anti_alias_stride = 1/anti_alias_dim;
 

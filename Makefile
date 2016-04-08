@@ -54,7 +54,11 @@ CPPSRCS       = raytracer.cpp util.cpp light_source.cpp scene_object.cpp bmp_io.
 
 ##############################################################################
 # Define additional rules that make should know about in order to compile our
-# files.                                        
+# files.         
+
+%.o : %.cpp
+	$(CC) $(CFLAGS) -c $*.cpp
+                               
 ##############################################################################
 
 # Define default rule if Make is run without arguments

@@ -48,9 +48,16 @@ void PointLight::shade( Ray3D& ray ) {
     double spe_comp = pow(reflection.dot(eye), material->specular_exp);
     spe_comp = fmax(0, spe_comp);
     
+
     Colour diffuse = dif_comp * dif_col;
     Colour specular = spe_comp * spe_col;
     Colour ambient = amb_col;
+
+/*  For generating scene signature, do not multiply by the light component
+    Colour diffuse = dif_col;
+    Colour specular = spe_col;
+    Colour ambient = amb_col;
+*/
     
     Colour illuminate = ambient + diffuse + specular;
     illuminate.clamp();
